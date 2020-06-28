@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+<h2 align="center">User Registration Form</h2>
+</head>
+<font color="red">
+	<h4 align="center">
+		<td th:text="${err}" />
+		<td th:text="${msg1}" />
+		
+	</h4>
+</font>
+<body bgcolor="skyblue" font-color="black">
+	<table border='3' width='480px' cellpadding='2' cellspacing='2'
+		align='center' bgcolor='silver'>
+		<form th:action="@{userReg}" th:object="${user}" method="post">
+			<tr>
+				<td><label for="fname">Enter FirstName(*)</label></td>
+				<td><input type="text" th:field="*{fname}" id="fname"
+					placeholder="FirstName"> <span
+					th:if="${#fields.hasErrors('fname')}" th:errors="*{fname}"></span></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td><label for="lname">Enter LastName(*)</label></td>
+				<td><input type="text" th:field="*{lname}" id="lname"
+					placeholder="LastName"> <span
+					th:if="${#fields.hasErrors('fname')}" th:errors="*{fname}"></span></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td><label for="username">Enter UserName(*)</label></td>
+				<td><input type="text" th:field="*{username}" id="username"
+					placeholder="Username"> <span
+					th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></span></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td><label for="email">Enter Email(*)</label></td>
+				<td><input type="text" th:field="*{email}" id="email"
+					placeholder="Email"> <span
+					th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td><label for="mobile">Enter MobileNumber(*)</label></td>
+				<td><input type="text" th:field="*{mobile}" id="fname"
+					placeholder="MobileNumber"> <span
+					th:if="${#fields.hasErrors('mobile')}" th:errors="*{mobile}"></span></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+			</tr>
+
+			<tr>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td><label for="gender">Select Gender(*)</label></td>
+				<td><input type="radio" th:field="*{gender}" id="gender"
+					value="MALE"> MALE</input> <input type="radio" th:field="*{gender}"
+					id="gender" value="FEMALE"> FEMALE</input> <input type="radio"
+					th:field="*{gender}" id="gender" value="OTHERS"> OTHERS</input></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+			<td>Select Role(*)</td>
+				<td><select id="roles" name="roles">
+						<option value="1">superuser</option>
+                      	<option value="2">user</option>
+                      		<option value="3">maker</option>
+                      			<option value="4">checker</option>
+                        </select></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>Select City(*)</td>
+				<td><select id="city" name="city">
+						<option value="BANGALORE">BANGALORE</option>
+						<option value="CHENNAI">CHENNAI</option>
+						<option value="HYDERABAD">HYDERABAD</option>
+						<option value="MUMBAI">MUMBAI</option>
+						<option value="PUNE">PUNE</option>
+						<option value="KOLKATA">KOLKATA</option>
+						<option value="DELHI">DELHI</option>
+						<option value="PATNA">PATNA</option>
+						<option value="JAIPUR">JAIPUR</option>
+						<option value="KERALA">KERALA</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+			</tr>
+			
+							<td>	Select DOB(*)	<div class="input-group">
+										<div class="input-group-addon">
+											<i class="fa fa-calendar"> </i>
+										</div></td>
+									<td>	<input class="form-control" id="date" name="date"
+											placeholder="DOB(DD/MM/YYYY)*" type="date"
+											th:field="*{birthdate}" />
+									</div></td>
+			<tr>
+				<td><label for="password">Choose Password(*)</label></td>
+				<td><input type="password" th:field="*{password}" id="password"
+					placeholder="Password"> <span
+					th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span></td>
+			</tr>
+
+			<tr>
+				<td>&nbsp;</td>
+			</tr>
+			<table align="center">
+				<tr>
+					<td><input type="submit" value="Register"></td>
+				</tr>
+			</table>
+		</form>
+	</table>
+</body>
+</html>

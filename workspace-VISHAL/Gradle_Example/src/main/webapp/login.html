@@ -1,0 +1,84 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Log in</title>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+<link href="style.css" rel="stylesheet" />
+	 <link th:href="@{/css/style.css}" rel="stylesheet"></link>
+  
+    <script th:src="@{/image/bg.jpeg}" type="text/javascript"></script>
+   
+</script>
+</head>
+<body>
+
+	<div class="container">
+	<div class="row ">
+
+	<div class="col-7 col left-col">
+	<div class="col">
+	<div class="left-side">
+	
+	</div>
+	<div class="col-7 col left-col">
+	<div class="right-side">
+	
+	</div>
+	
+	<div class="col-5 col right-col">
+<div style="width: 600px; margin-left: auto; margin-right: auto; margin-top: 24px; padding: 24px;">			
+ <div class="card" style="width: 22rem;">
+ <img class="card-img-top" src="C:\eclipse\SpringBoot\SpringBootMakerChecker\src\main\resources\static" alt="Card image cap">
+ <img src="../static/image/bg.jpeg" width="100" length="100"             th:src="@{image/bg.jpeg}"/>
+				<div class="card-header">
+					<i class="fa fa-user"></i>  Login
+				</div>
+ <td  th:text="${error}"/>
+				<div class="card-block" style="padding: 24px;">
+
+					<form name="f" th:action="registration" method="post">
+						<fieldset>
+
+							<div class="form-group">
+								<label for="txtUsername">User name</label> <input type="text"
+									class="form-control" id="username" name="username"
+									placeholder="Username" required="required">
+
+							</div>
+
+							<div class="form-group">
+								<label for="txtPassword">Password</label> <input type="password"
+									class="form-control" id="password" name="password"
+									placeholder="Password" required="required">
+
+							</div>
+
+							<div class="form-check">
+								<input type="checkbox" class="form-check-input"
+									id="checkRememberMe" name="checkRememberMe"> <label
+									class="form-check-label" for="checkRememberMe">Remember
+									me?</label>
+							</div>
+
+
+							<div class="form-actions" style="margin-top: 12px;">
+								<button type="submit" class="btn btn-success">Sign in</button>
+							</div>
+
+						</fieldset>
+					</form>
+
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	</div>
+	
+</body>
+</html>
